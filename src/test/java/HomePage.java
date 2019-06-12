@@ -75,14 +75,48 @@ public class HomePage {
     }
 
     //Выбор заголовка "Пиццы"
-    public HomePage pressPizzaHeadline(){
+    public HomePage pressPizzaHeadline() {
         driver.findElement(pizza_Headline).click();
         return this;
     }
 
 
+    //Выбор Пиццы
+    public PizzaPage selectPizzaName(String pizzaName) {
+        WebElement namePizza;
+        namePizza = driver.findElement(By.xpath("//span[.='" + pizzaName + "']"));
+        namePizza.isSelected();
+        return new PizzaPage(driver);
+    }
 
+    //Выбрать из какого теста будет изготовлена Пицца
+    public PizzaPage selectPizzaDough(String dough) {
+        WebElement pizzaDough;
+        pizzaDough = driver.findElement(By.xpath("//a[.='" + dough + "']"));
+        pizzaDough.click();
+        return new PizzaPage(driver);
+    }
 
+    //Выбор размера Пиццы
+    public PizzaPage selectPizzaSize(int size) {
+        WebElement pizzaLengh;
+        pizzaLengh = driver.findElement(By.xpath("//span[.='" + size + "см" + "']"));
+        pizzaLengh.click();
+        return new PizzaPage(driver);
+    }
+
+    //Нажатие на кнопку "В корзину"
+    public void pressAddToCard() {
+        driver.findElement(By.xpath("../../../..//a[.='+ в корзину']")).click();
+    }
+
+    public PizzaPage selectPizza(String pizzaName, String dough, int size){
+        selectPizzaName(pizzaName);
+        selectPizzaDough(dough);
+        selectPizzaSize(size);
+//        pressAddToCard();
+        return new PizzaPage(driver);
+    }
 
 }
 

@@ -33,7 +33,7 @@ public class WebSettings {
     @AfterTest
     public void setTimeout() {
         try {
-            TimeUnit.SECONDS.sleep(10);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

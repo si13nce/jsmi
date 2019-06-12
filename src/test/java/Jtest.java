@@ -22,7 +22,11 @@ public class Jtest {
         hp.getSettings().setTimeout();
         hp.pressPizzaHeadline();
         hp.getSettings().setTimeout();
-        hp = pp.addToCard("Пицца Пепперони");
+        hp.selectPizza("Пицца Мясное Ассорти", "Тонкое", 30);
+
+
+
+
 
 
 

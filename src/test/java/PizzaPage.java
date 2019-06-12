@@ -14,14 +14,4 @@ public class PizzaPage {
         settings.setUp();
     }
 
-
-
-    //Select pizza
-    public HomePage addToCard(String title) {
-        WebElement targetspan;
-        targetspan = driver.findElement(By.xpath("//span[.='" + title + "']")).findElement(By.xpath("../../../..//a[.='+ в корзину']"));
-        targetspan.click();
-        return new HomePage(driver);
-    }
-
 }
