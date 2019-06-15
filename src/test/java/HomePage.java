@@ -27,7 +27,6 @@ public class HomePage {
     public final static By login_Password = By.xpath("//*[@id=\"login-password\"]");
     public final static By submit_Button = By.xpath("//*[@id='login_form']/fieldset/div[2]/input");
     public final static By altlogin_Button = By.xpath("//*[@id=\"login_form\"]/fieldset/div[3]/a[1]");
-
     public final static By pizza_Headline = By.xpath("//span[.='Пиццы']");
 
 
@@ -68,8 +67,6 @@ public class HomePage {
         typePassword(password);
         return submitLogin();
     }
-
-
 
 
     //Выбор заголовка "Пиццы"

@@ -78,7 +78,7 @@ public class PizzaPage {
 
     public PizzaPage takePizza() {
 //        driver.findElement(By.xpath("//*[@id='item6']/div[3]/div[2]/div[2]/div[8]/div/a")).click();
-        driver.findElement(By.xpath("//*[@data-bind='click: add2cart.bind($data, $element)']"));
+        driver.findElement(By.xpath(".//*[@data-bind='click: add2cart.bind($data, $element)']"));
         return new PizzaPage(driver);
     }
 
@@ -90,13 +90,13 @@ public class PizzaPage {
 
         WebElement testo;
 //        testo = driver.findElement(By.xpath("//a[.='" + dough + "']//../..//span[.='" + size + "см" + "']"));
-        testo = driver.findElement(By.xpath("//a[.='" + dough + "']"));
+        testo = driver.findElement(By.xpath(".//a[.='" + dough + "']"));
         testo.click();
 
         WebElement razmer;
 //        razmer = driver.findElement(By.xpath("//span[.='" + size + "см" + "']"));
 //        razmer = driver.findElement(By.xpath("//a[.='" + dough + "']/../../..//div[@class='size active']/../..//span[.='" + size + "см" + "']/../.."));
-        razmer = driver.findElement(By.xpath("//a[.='" + dough + "']/../../../../..//span[.='" + size + "см" + "']/../.."));
+        razmer = driver.findElement(By.xpath(".//a[.='" + dough + "']/../../../../..//span[.='" + size + "см" + "']/../.."));
         razmer.click();
 
         return takePizza();
