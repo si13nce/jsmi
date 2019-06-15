@@ -20,16 +20,8 @@ public class Jtest {
         hp.pressAltButton();
         hp.loginAs("89165833338", "shuter13");
         hp.getSettings().setTimeout();
-        hp.pressPizzaHeadline();
-        hp.getSettings().setTimeout();
-        hp.selectPizza("Пицца Мясное Ассорти", "Тонкое", 30);
-
-
-
-
-
-
-
+        pp = hp.pressPizzaHeadline();
+        pp.selectPizza("Пицца Пепперони", "Тонкое", 30);
 
     }
 }
