@@ -42,42 +42,70 @@ public class PizzaPage {
 
     //Выбор размера Пиццы
     public PizzaPage selectPizzaSize(int size) {
-        WebElement pizzaLenght;
-        pizzaLenght = driver.findElement(By.xpath("//span[.='" + size + "см" + "']"));
-        pizzaLenght.click();
+        WebElement pizzaSize;
+//        pizzaSize = driver.findElement(By.xpath("//span[.='" + size + "см" + "']/../.."));
+        pizzaSize = driver.findElement(By.xpath("//span[.='" + size + "см" + "']"));
+        pizzaSize.click();
         return new PizzaPage(driver);
     }
 
-    //Нажатие на кнопку "В корзину"
-    public void pressAddToCard() {
-        driver.findElement(By.xpath("../../../..//a[.='+ в корзину']")).click();
-    }
 
+    //Нажатие на кнопку "В корзину"
+//    private void pressAddToCard() {
+//        driver.findElement(By.xpath("../../../..//a[.='+ в корзину']")).click();
+//    }
 
 
     //Выбор пиццы с параметрами.
-    public PizzaPage selectPizza(String pizzaName, String dough, int size) {
-        selectPizzaName(pizzaName);
-        selectPizzaDough(dough);
-        selectPizzaSize(size);
+//    private PizzaPage selectPizza(String pizzaName, String dough, int size) {
+//        selectPizzaName(pizzaName);
+//        selectPizzaDough(dough);
+//        selectPizzaSize(size);
+//        return new PizzaPage(driver);
+//    }
+
+
+//    //Добавление Пицца в корзину по Имени
+//    public PizzaPage addToСart(String pizzaName){
+//        WebElement target;
+//        target = driver.findElement(By.xpath("//span[.='" + pizzaName + "']/../../../..//a[.='+ в корзину']"));
+//        target.click();
+//        return new PizzaPage(driver);
+//    }
+
+
+    //Выбираем Пиццу
+
+    public PizzaPage takePizza() {
+//        driver.findElement(By.xpath("//*[@id='item6']/div[3]/div[2]/div[2]/div[8]/div/a")).click();
+        driver.findElement(By.xpath("//*[@data-bind='click: add2cart.bind($data, $element)']"));
         return new PizzaPage(driver);
     }
 
 
+    public PizzaPage changePizza(String pizzaName, String dough, int size) {
+        WebElement name;
+        name = driver.findElement(By.xpath(".//span[.='" + pizzaName + "']"));
+        name.isSelected();
 
+        WebElement testo;
+//        testo = driver.findElement(By.xpath("//a[.='" + dough + "']//../..//span[.='" + size + "см" + "']"));
+        testo = driver.findElement(By.xpath("//a[.='" + dough + "']"));
+        testo.click();
 
+        WebElement razmer;
+//        razmer = driver.findElement(By.xpath("//span[.='" + size + "см" + "']"));
+//        razmer = driver.findElement(By.xpath("//a[.='" + dough + "']/../../..//div[@class='size active']/../..//span[.='" + size + "см" + "']/../.."));
+        razmer = driver.findElement(By.xpath("//a[.='" + dough + "']/../../../../..//span[.='" + size + "см" + "']/../.."));
+        razmer.click();
 
+        return takePizza();
 
-
-    //Добавление Пицца в корзину по Имени
-    public PizzaPage addToСart(String pizzaName){
-        WebElement target;
-        target = driver.findElement(By.xpath("//span[.='" + pizzaName + "']/../../../..//a[.='+ в корзину']"));
-        target.click();
-        return new PizzaPage(driver);
     }
 
 
-
+//    public final static By low = By.xpath("//div[@class='size active']/../..//span[.='26см']/../..");
+//    public final static By middle = By.xpath("//div[@class='size active']/../..//span[.='30см']/../..");
+//    public final static By high = By.xpath("//div[@class='size active']/../..//span[.='40см']/../..");
 
 }

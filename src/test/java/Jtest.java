@@ -21,7 +21,7 @@ public class Jtest {
         hp.loginAs("89165833338", "shuter13");
         hp.getSettings().setTimeout();
         pp = hp.pressPizzaHeadline();
-        pp.selectPizza("Пицца Пепперони", "Тонкое", 30);
+        pp.changePizza("Пицца Пепперони", "Тонкое",40);
 
     }
 }

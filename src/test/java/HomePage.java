@@ -48,9 +48,6 @@ public class HomePage {
     }
 
 
-    //Enter words
-
-
     //Enter: "Login"
     public HomePage typeUsername(String username) {
         driver.findElement(HomePage.login_Name).sendKeys(username);
@@ -71,6 +68,9 @@ public class HomePage {
         typePassword(password);
         return submitLogin();
     }
+
+
+
 
     //Выбор заголовка "Пиццы"
     public PizzaPage pressPizzaHeadline() {
