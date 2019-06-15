@@ -42,7 +42,7 @@ public class WebSettings {
 
     }
 
-    public void close() {
+    public void close()    {
         driver.quit();
     }
 
